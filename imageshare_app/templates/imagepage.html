@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row" style="padding-top: 5%;">
+  {% for images in image %}
+  <div class="col-lg-4 mb-3">
+    <div class="card h-100">  <img
+        class="card-img-top"
+        src="{{ images.img.url }}"
+        alt="Card image cap"
+        height="200px"
+        width="300px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ images.name }}</h5>
+        <p class="card-text">{{ images.description }}</p>
+        <a href="{% url 'delete_image' images.id %}" class="btn btn-primary">Delete</a>
+      </div>
+      <div class="card-footer">  <span class="datetime">{{ images.post_date }}</span><br/>
+        <strong>by {{ images.user_name }}</strong>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

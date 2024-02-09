@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
+<div style="position: absolute; left: 50%; top: 10%; width: 50%">
+  {% include 'messages.html' %}
+</div>
+<div
+  style="
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    width: fit-content;
+    height: fit-content;
+  "
+>
+  <form method="POST">
+    {% csrf_token %}
+    <h2 class="text-center">Log in to your account</h2>
+    {{ form|crispy }}
+    <div class="form-group">
+      <input class="btn btn-outline-info" type="submit" />
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <small class="text-muted">
+      Need An Account?
+      <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+    </small>
+  </div>
+</div>
+{% endblock content %}
