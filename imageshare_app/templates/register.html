@@ -2,10 +2,14 @@
 <!-- Load crispy form -->
 {% load crispy_forms_tags %} {% block content %}
 
-<div class="content-section" style="padding-top:5%;">
+<div class="content-section" style="padding-top: 5%">
   <!-- Sign up form -->
   {% include 'messages.html' %}
-  <form method="POST" enctype="multipart/form-data" style="padding:0px 20px 10px 10px;">
+  <form
+    method="POST"
+    enctype="multipart/form-data"
+    style="padding: 0px 20px 10px 10px"
+  >
     {% csrf_token %}
     <fieldset class="form-group">
       <legend class="border-bottom mb-4">Join us today</legend>
@@ -18,7 +22,8 @@
   <!-- Sign in form -->
   <div class="border-top pt-3">
     <small class="text-muted">
-      Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign in</a>
+      Already have an account?
+      <a class="ml-2" href="{% url 'login' %}">Sign in</a>
     </small>
   </div>
 </div>

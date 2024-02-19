@@ -7,19 +7,20 @@ from django.contrib.auth.forms import UserCreationForm
 
 class UserRegisterForm(UserCreationForm):
     class Meta:
-        model =Memeber
-        fields = ['username', 'email', 'password1', 'password2', 'profile_pic']
-    
+        model = Memeber
+        fields = ["username", "email", "password1", "password2", "profile_pic"]
+
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
 
     class Meta:
         model = Memeber
-        fields = ['username', 'email']
+        fields = ["username", "email"]
+
 
 class ImageUploadForm(forms.ModelForm):
 
     class Meta:
-        model=Imagepage
-        fields= ['img','name','description','post_date']
+        model = Imagepage
+        fields = ["img", "name", "description", "post_date"]
